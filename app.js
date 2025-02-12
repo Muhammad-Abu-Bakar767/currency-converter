@@ -83,6 +83,8 @@ const updateExchangeRate = async () => {
 
   let convertedamount = amountvalue * market_rate;
 
+  convertedamount = convertedamount.toFixed(2);
+
   let msg = document.querySelector(".msg");
 
   let newmsg = `${amountvalue} ${fromcur.toUpperCase()} = ${convertedamount} ${tocur.toUpperCase()}`;
@@ -91,37 +93,3 @@ const updateExchangeRate = async () => {
 
   msg.innerText = newmsg;
 };
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// let promise;
-// let response;
-
-
-// (async function () {
-
-//     from = prompt("FROM");
-
-//     to = prompt("TO");
-
-//     let amount = prompt("Amount");
-
-//     URL = URL.replace("pkr", from);
-
-//     console.log("Fetching data...");
-
-//     response = await fetch(URL);
-
-//     console.log(response)
-
-//     data = await response.json();
-
-//     console.log(data);
-
-//     let market_rate = data[from][to];
-
-//     let result = amount * market_rate;
-
-//     console.log(`Converted Value ${result}`);
-
-// })();
